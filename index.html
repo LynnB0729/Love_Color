@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
     <title> Color History</title>
     <style>
         body {
             background-color: #eae7e7;
         }
       
+        h1 {
+           font-family: 'Rampart One', cursive;
+           font-size: 120px;
+           margin: 0;
+        }
+
+        h2 {
+          margin: 0;
+          font-size: 40px;
+        }
+
         footer {
             text-align: center;
             margin: 20px;
@@ -24,10 +38,12 @@
         p {
             text-align: justify;
             font-size: 18px;
+            line-height: 1.5;
         } 
 
         img {
             border-radius:10px;
+            max-height: 95%;
             transition: transform 150ms ease-in-out;
             box-shadow: 2px 1px;
         }
@@ -50,10 +66,12 @@
             display: grid;
             grid-gap: 20px;
             margin-bottom: 20px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
+
         .singleImage img {
             width: 100%;
+            max-height: 90%
         }
         
         .container {
@@ -83,6 +101,7 @@
             opacity: 90%;
             color: #eae7e7;
             border:  solid #eae7e7 3px;
+            cursor: pointer;
         }
 
         .learnMore {
@@ -100,20 +119,33 @@
             opacity: 90%;
             color: #eae7e7;
             border: solid #eae7e7 3px;
+            cursor: pointer;
+        }
+
+        .darkMode {
+            background-color: black;
+        }
+
+        .darkMode .container {
+            background-color: #303235;
+            color: #f5f5f5; 
+        }
+
+        .darkFooter {
+            color: #f5f5f5;
         }
 
     </style>
 </head>
 <body>
+    <button class="darkTheme">Dark Theme</button>
     <div class="container">
     
     <h1>Color</h1>
-    <h2>I love colors and their history</h2>
+    <h2>Vibrant and Full of History</h2>
 
     <p>I have always loved color, even more so after reading the book, The <a href="https://a.co/d/f4QhVB7">Secret Lives of Color</a>. The "Secret Lives of Colour" is a 2016 non-fiction book by British writer Kassia St. Clair which explores the cultural and social history of colours. The book, which is based on a column St. Clair writes for British magazine Elle Decoration, is organized in a series of chapters by color, arranged from white to black.</p>
     
-    <br>
-
     <p>Already a color geek, reading this book further inspired me. I love to add bold, vivid colors to everything I create. I love the notion of a color having a story, some special adventure. I get excited to see what the new Pantone Color of the Year, always reading the back story. Even as a kid, I loved the smell of a fresh, new box of crayons and believe color is a sensory experience and evokes emotion beyond what we see. 
     </p>
 
@@ -130,10 +162,22 @@
     <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/069/144/original/crayonline.jpg?1677374862">
 </div>  
  
-  <button class="darkTheme">Dark Theme</button>
   <button class="learnMore">Learn More</button>
 </div>
 
 <footer> Coded with 🖤 by Lynn Bailey</footer>
+
+<script>
+
+    function changeTheme(){
+        let body = document.querySelector("body");
+        body.classList.add("darkMode");
+        let footer = document.querySelector("footer");
+        footer.classList.add("darkFooter");
+    }
+    
+    let buttonBasket = document.querySelector(".darkTheme");
+    buttonBasket.addEventListener("click", changeTheme);
+</script>
 </body>
 </html>
